@@ -51,10 +51,10 @@ from bastion_config_certification import validate_config
 reference = {
     "single_source_of_truth": True,
     "risk": {
-        "base_risk_per_trade": 0.005,
-        "max_risk_per_trade": 0.0075,
+        "base_risk_per_trade": 0.010,
+        "max_risk_per_trade": 0.015,
     },
-    "entry_thresholds": {"buy_threshold": 0.53, "sell_threshold": 0.47},
+    "entry_thresholds": {"buy_threshold": 0.55, "sell_threshold": 0.45},
     "symbols": ["EURUSD", "GBPUSD"],
     "timeframes": ["M1", "M5"],
 }
@@ -62,10 +62,10 @@ reference = {
 runtime = {
     "single_source_of_truth": True,
     "risk": {
-        "base_risk_per_trade": 0.005,
+        "base_risk_per_trade": 0.010,
         "max_risk_per_trade": 0.015,  # drift!
     },
-    "entry_thresholds": {"buy_threshold": 0.53, "sell_threshold": 0.47},
+    "entry_thresholds": {"buy_threshold": 0.55, "sell_threshold": 0.45},
     "symbols": ["EURUSD", "GBPUSD"],
     "timeframes": ["M1", "M5"],
 }
@@ -86,7 +86,7 @@ audit.request_override(
     operator="operator_1",
     reason="Emergency launch after certification warning",
     parameter_path="risk.max_risk_per_trade",
-    previous_value="0.0075",
+    previous_value="0.015",
     new_value="0.015",
     consent_phrase="RESUME NORMAL LIVE",
 )
@@ -124,7 +124,7 @@ ruff check .
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Apache-2.0 — see [LICENSE](LICENSE).
 
 ---
 
